@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather APP</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light  navbg">
+       <a class="navbar-brand" href="#">
+    <img src="https://cdn-icons-png.flaticon.com/512/1779/1779940.png" width="30" height="30" class="d-inline-block align-top" alt="">
+  </a>
+        <a class="navbar-brand  logo_name" href="#">WEATHER APP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto navmem">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"> How to use</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">About this app</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                User Guide
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Indore</a>
+                <a class="dropdown-item" href="#">Bhopal</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Gwalior</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" id="city" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" id="submit" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+      <div class="container">
+        <h1 class="my-4 text-center">Weather for <span id="cityname"></span></h1>
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3 cbg">
+                    <h4 class="my-0 fw-normal">Temperatures</h4>
+                  </div>
+                  <div class="card-body tbg">
+                    <h1 class="card-title pricing-card-title"> <span id="temp_2"></span><span>&#8451;</span></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Temperature is <span id="temp"></span><span>&#8451;</span></li>
+                      <li>Min Temperature is <span id="min_temp"></span><span>&#8451;</span></li>
+                      <li>Max Temperature is <span id="max_temp"></span><span>&#8451;</span></li>
+
+                    </ul>
+                    <!-- <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button> -->
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3  cbg">
+                    <h4 class="my-0 fw-normal">Wind Info</h4>
+                  </div>
+                  <div class="card-body tbg">
+                    <h1 class="card-title pricing-card-title"><span id="wind_speed_2"></span><small class="text-muted fw-light"> km/hr</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Cloud PCT is <span id="cloud_pct"></span></li>
+                        <li>Feels Like is <span id="feels_like"></span>    </li> 
+                        <li>Wind Speed is <span id="wind_speed"></span></li>
+                        <li>Wind Degrees is <span id="wind_degrees"></span></li>
+
+
+                    </ul>
+                    <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button> -->
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                  <div class="card-header py-3 text-bg-primary border-primary cbg">
+                    <h4 class="my-0 fw-normal">Humidity Info</h4>
+                  </div>
+                  <div class="card-body tbg">
+                    <h1 class="card-title pricing-card-title"><span id="humidity_2"></span><small class="text-muted fw-light"> %</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Humidity is <span id="humidity"></span><small class="text-muted fw-light"> %</small></li>
+                        <li>Sunrise  is <span id="sunrise"></span></li>
+                        <li>Sunset is <span id="sunset"></span></li>
+
+                    </ul>
+                    <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <h2 class="display-6 text-center mb-4">Weather other cities</h2>
+        
+            <div class="table-responsive">
+              <table class="table text-center tbg">
+                <thead>
+                  <tr class="cbg">
+                    <th style="width: 22%;">City </th>
+                    <th style="width: 22%;">Cloud_pct </th>
+                    <th style="width: 22%;">Feels_like</th>
+                   <th style="width: 22%;">Humidity</th>
+                   <th style="width: 22%;">Max_temp</th>
+                    <th style="width: 22%;">Min_temp</th>
+                    <th style="width: 22%;">Sunrise</th>
+                   <th style="width: 22%;">Sunset</th>
+                   <th style="width: 22%;">Temp</th>
+                   <th style="width: 22%;">Wind_degrees</th>
+                   <th style="width: 22%;">Wind_speed</th>
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" class="text-start">Jabalpur</th>
+                    <td ><span id="jbl_Cloud_pct"></span></td>
+                    <td ><span id="jbl_Feels_like"></span></td>
+                    <td><span  id="jbl_Humidity"></span><small class="text-muted fw-light"> %</small></td>
+                    <td ><span id="jbl_Max_temp"></span><span>&#8451;</span></td>
+                    <td ><span id="jbl_Min_temp"></span><span>&#8451;</span></td>
+                    <td ><span id="jbl_Sunrise"></span></td>
+                    <td ><span id="jbl_Sunset"></span></td>
+                    <td ><span id="jbl_Temp"></span><span>&#8451;</span></td>
+                    <td ><span id="jbl_Wind_degrees"></span></td>
+                    <td ><span id="jbl_Wind_speed"></span><small class="text-muted fw-light"> km/hr</small></td>
+
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start">Ujjain</th>
+                    <td ><span id="ujj_Cloud_pct"></span></td>
+                    <td ><span id="ujj_Feels_like"></span></td>
+                    <td><span  id="ujj_Humidity"></span><small class="text-muted fw-light"> %</small></td>
+                    <td ><span id="ujj_Max_temp"></span><span>&#8451;</span></td>
+                    <td ><span id="ujj_Min_temp"></span><span>&#8451;</span></td>
+                    <td ><span id="ujj_Sunrise"></span></td>
+                    <td ><span id="ujj_Sunset"></span></td>
+                    <td ><span id="ujj_Temp"></span><span>&#8451;</span></td>
+                    <td ><span id="ujj_Wind_degrees"></span></td>
+                    <td ><span id="ujj_Wind_speed"></span><small class="text-muted fw-light"> km/hr</small></td>
+                  </tr>
+                </tbody>
+        
+                <tbody>
+                  <tr>
+                    <th scope="row" class="text-start">Sagar</th>
+                    <td ><span id="sag_Cloud_pct"></span></td>
+                    <td ><span id="sag_Feels_like"></span></td>
+                    <td><span  id="sag_Humidity"></span><small class="text-muted fw-light"> %</small></td>
+                    <td ><span id="sag_Max_temp"></span><span>&#8451;</span></td>
+                    <td ><span id="sag_Min_temp"></span><span>&#8451;</span></td>
+                    <td ><span id="sag_Sunrise"></span></td>
+                    <td ><span id="sag_Sunset"></span></td>
+                    <td ><span id="sag_Temp"></span><span>&#8451;</span></td>
+                    <td ><span id="sag_Wind_degrees"></span></td>
+                    <td ><span id="sag_Wind_speed"></span><small class="text-muted fw-light"> km/hr</small></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start">Dewas</th>
+                    <td ><span id="dew_Cloud_pct"></span></td>
+                    <td ><span id="dew_Feels_like"></span></td>
+                    <td><span  id="dew_Humidity"></span><small class="text-muted fw-light"> %</small></td>
+                    <td ><span id="dew_Max_temp"></span><span>&#8451;</span></td>
+                    <td ><span id="dew_Min_temp"></span><span>&#8451;</span></td>
+                    <td ><span id="dew_Sunrise"></span></td>
+                    <td ><span id="dew_Sunset"></span></td>
+                    <td ><span id="dew_Temp"></span><span>&#8451;</span></td>
+                    <td ><span id="dew_Wind_degrees"></span></td>
+                    <td ><span id="dew_Wind_speed"></span><small class="text-muted fw-light"> km/hr</small></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start">Ratlam</th>
+                    <td ><span id="rat_Cloud_pct"></span></td>
+                    <td ><span id="rat_Feels_like"></span></td>
+                    <td><span  id="rat_Humidity"></span><small class="text-muted fw-light"> %</small></td>
+                    <td ><span id="rat_Max_temp"></span><span>&#8451;</span></td>
+                    <td ><span id="rat_Min_temp"></span><span>&#8451;</span></td>
+                    <td ><span id="rat_Sunrise"></span></td>
+                    <td ><span id="rat_Sunset"></span></td>
+                    <td ><span id="rat_Temp"></span><span>&#8451;</span></td>
+                    <td ><span id="rat_Wind_degrees"></span></td>
+                    <td ><span id="rat_Wind_speed"></span><small class="text-muted fw-light"> km/hr</small></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start">Guna</th>
+                    <td ><span id="gun_Cloud_pct"></span></td>
+                    <td ><span id="gun_Feels_like"></span></td>
+                    <td><span  id="gun_Humidity"></span><small class="text-muted fw-light"> %</small></td>
+                    <td ><span id="gun_Max_temp"></span><span>&#8451;</span></td>
+                    <td ><span id="gun_Min_temp"></span><span>&#8451;</span></td>
+                    <td ><span id="gun_Sunrise"></span></td>
+                    <td ><span id="gun_Sunset"></span></td>
+                    <td ><span id="gun_Temp"></span><span>&#8451;</span></td>
+                    <td ><span id="gun_Wind_degrees"></span></td>
+                    <td ><span id="gun_Wind_speed"></span><small class="text-muted fw-light"> km/hr</small></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </main>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

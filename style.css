@@ -1,0 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Heebo&family=Playfair+Display&display=swap');
+.bg-light {
+    background-color: #d0e1f2 !important;
+}
+
+.logo_name{
+font-family: 'Heebo', sans-serif;
+}
+.navmem
+{
+    font-family: 'Heebo', sans-serif;
+}
+.tbg
+{
+    background-color: #f7f7f7 !important;
+}
+.cbg
+{
+    background-color: #dde0ff !important;
+}
